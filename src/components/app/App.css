@@ -1,0 +1,8 @@
+.app {}
+
+.app-logo {
+width: 8rem;
+height: 8rem;
+pointer-events: none;
+}
+
