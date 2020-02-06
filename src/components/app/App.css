@@ -1,8 +1,22 @@
-.app {}
-
-.app-logo {
-width: 8rem;
-height: 8rem;
-pointer-events: none;
+.app {
+    display: grid;
+    grid-template-columns: 1fr 42rem;
 }
 
+.app-logo {
+    width: 8rem;
+    height: 8rem;
+    pointer-events: none;
+}
+
+.app__header {
+    outline: 0.1rem dashed red;
+}
+
+.app__content {
+    outline: 0.1rem dashed blue;
+}
+
+.app__sidebar {
+    outline: 0.1rem dashed green;
+}
