@@ -11,7 +11,10 @@ const App = () => {
 	const [state, setState] = useState(useContext(AppContext))
 
 	useEffect(() => {
-		fetch(state.url).then(r => r.text()).then(t => console.log(t))
+		fetch(state.url, {
+			method: 'GET',
+			mode: 'no-cors'
+		}).then(r => r.text()).then(t => console.log(t))
 	})
 
     return (
