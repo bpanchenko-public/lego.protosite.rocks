@@ -1,12 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './App.css'
 
+import AppContext from './AppContext'
 import Article from '../Article/Article'
 import ArticlesList from '../ArticlesList'
 
 import logo from '../../resources/svg/logo.svg'
 
 const App = () => {
+	const [state, setState] = useState(useContext(AppContext))
+
+	useEffect(() => {
+		fetch(state.url).then(r => r.text()).then(t => console.log(t))
+	})
+
     return (
         <main className="app">
             <header className="app__header">
