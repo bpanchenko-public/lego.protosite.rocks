@@ -1,22 +1,31 @@
+
 .app {
     display: grid;
+    grid-gap: var(--space-default, 1.6rem);
     grid-template-columns: 1fr 42rem;
-}
-
-.app-logo {
-    width: 8rem;
-    height: 8rem;
-    pointer-events: none;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
 }
 
 .app__header {
+    grid-area: header;
+    line-height: 8rem;
     outline: 0.1rem dashed red;
 }
 
 .app__content {
+    grid-area: content;
     outline: 0.1rem dashed blue;
 }
 
 .app__sidebar {
+    grid-area: sidebar;
     outline: 0.1rem dashed green;
+}
+
+.app__footer {
+    grid-area: footer;
+    outline: 0.1rem dashed cyan;
 }

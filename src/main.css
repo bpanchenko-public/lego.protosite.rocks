@@ -1,3 +1,30 @@
 @import "~protosite.uikit/assets/uikit.css";
 
-/* ... */
+.c-logo {
+    --img-size: 2.4rem;
+
+    white-space: nowrap;
+}
+
+.c-logo,
+.c-logo__image,
+.c-logo__text {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.c-logo__image {
+    width: var(--img-size);
+    height: var(--img-size);
+    object-fit: contain;
+}
+
+.c-logo__text {
+    font-size: var(--img-size);
+    font-weight: 900;
+}
+
+.c-logo__image + .c-logo__text {
+    margin-left: var(--space-xs);
+}

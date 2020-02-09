@@ -1,8 +1,8 @@
 import React from "react"
 
-const Article = (props: Props) => {
+const Article = ({ className }: Props) => {
     return (
-        <article className={props.className}></article>
+        <article className={`o-article ${className}`}></article>
     )
 }
 
