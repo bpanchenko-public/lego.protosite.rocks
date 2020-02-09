@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from 'react'
 import './App.css'
 
 import AppContext from './AppContext'
-import Article from '../Article/Article'
-import ArticlesList from '../ArticlesList'
+import Article from '../components/Article'
+import ArticlesList from '../components/ArticlesList'
 
-import logo from '../../resources/svg/logo.svg'
+import logo from '../resources/svg/logo.svg'
 
 const App = () => {
 	const [state, setState] = useState(useContext(AppContext))
