@@ -1,0 +1,1 @@
+export const RSS_FEED_URL = 'http://rss2json.ru/feed/'

@@ -5,17 +5,18 @@ import AppContext from './AppContext'
 import Article from '../components/Article'
 import ArticlesList from '../components/ArticlesList'
 
+import { RSS_FEED_URL } from '../config'
 import logo from '../resources/svg/logo.svg'
 
 const App = () => {
-	const [state, setState] = useState(useContext(AppContext))
+    const [state] = useState(useContext(AppContext))
 
-	useEffect(() => {
-		fetch(state.url, {
-			method: 'GET',
-			mode: 'no-cors'
-		}).then(r => r.text()).then(t => console.log(t))
-	})
+    useEffect(() => {
+        fetch(RSS_FEED_URL + `?rss=${state.url}`, {
+            method: 'GET',
+            mode: 'cors'
+        }).then(r => r.json()).then(j => console.log(j))
+    })
 
     return (
         <main className="app">
