@@ -1,9 +1,8 @@
 import React from "react"
-
-/* TOD: aria-selected="{(data.selected ? 'true' : 'false')}" */
+import cn from "classnames"
 
 const ArticlesListItem = ({ data }: Props) => (
-    <section className="o-list__item{ props.item.done ? 'is-read' : '' }">
+    <section className={cn('o-list__item', { 'is-read': data.isRead})} aria-selected={data.selected ? 'true' : 'false'}>
         <div className="o-list__cell">{data.title}</div>
         <div className="o-list__cell"></div>
     </section>
@@ -12,7 +11,8 @@ const ArticlesListItem = ({ data }: Props) => (
 type Props = {
     data: {
         title: String,
-        selected?: Boolean
+        selected?: Boolean,
+        isRead?: Boolean
     }
 }
 
