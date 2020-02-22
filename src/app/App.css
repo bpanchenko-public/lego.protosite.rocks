@@ -2,7 +2,7 @@
 .app {
     display: grid;
     grid-gap: var(--space-default, 1.6rem);
-    grid-template-columns: 1fr 42rem;
+    grid-template-columns: 42rem 1fr;
     grid-template-areas:
         "header header"
         "sidebar content"

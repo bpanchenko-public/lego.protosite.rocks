@@ -9,13 +9,18 @@ import { RSS_FEED_URL } from '../config'
 import logo from '../resources/svg/logo.svg'
 
 const App = () => {
-    const [state] = useState(useContext(AppContext))
+    const [state, setState] = useState(useContext(AppContext))
 
     useEffect(() => {
-        fetch(RSS_FEED_URL + `?rss=${state.url}`, {
+        fetch(RSS_FEED_URL + `?rss=${state.url || 'http://feeds.bbci.co.uk/russian/rss.xml'}`, {
             method: 'GET',
             mode: 'cors'
-        }).then(r => r.json()).then(j => console.log(j))
+        }).then(r => r.json()).then(d => {
+            setState({
+                ...state,
+                list: d.data
+            })
+        })
     })
 
     return (
