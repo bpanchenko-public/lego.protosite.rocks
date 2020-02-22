@@ -1,5 +1,9 @@
 @import "~protosite.uikit/assets/uikit.css";
 
+body {
+    background-color: white;
+}
+
 .c-logo {
     --img-size: 2.4rem;
 
