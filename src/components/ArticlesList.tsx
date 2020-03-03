@@ -3,13 +3,12 @@ import AppContext from "../app/AppContext"
 import ArticlesListItem from "./ArticlesListItem"
 
 const ArticlesList = ({ className }: Props) => {
-    const { list: articles } = useContext(AppContext);
+    const { list: articles } = useContext(AppContext)
+    
     return (
         <aside className={className}>
-            {articles.map(article => (
-                <ArticlesListItem
-                    data={article}
-                />
+            {articles.map((article, i) => (
+                <ArticlesListItem key={i} data={article} />
             ))}
         </aside>
     )
